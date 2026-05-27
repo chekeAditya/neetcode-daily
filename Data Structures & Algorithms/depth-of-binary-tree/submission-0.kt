@@ -1,0 +1,17 @@
+/**
+ * Definition for a binary tree node.
+ * class TreeNode(var `val`: Int) {
+ *     var left: TreeNode? = null
+ *     var right: TreeNode? = null
+ * }
+ */
+
+class Solution {
+    fun maxDepth(root: TreeNode?): Int {
+        if(root == null) return 0
+        val leftHeight = maxDepth(root.left)
+        val rightHeight = maxDepth(root.right)
+
+        return (max(leftHeight, rightHeight) + 1)
+    }
+}
